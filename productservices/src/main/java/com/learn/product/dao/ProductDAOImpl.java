@@ -1,19 +1,23 @@
 package com.learn.product.dao;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.learn.product.dto.Product;
 
 public class ProductDAOImpl implements ProductDAO {
 
+	
+	Map<Integer,Product> products = new HashMap<>();
+	
 	@Override
 	public void create(Product product) {
-		// TODO Auto-generated method stub
-
+		products.put(product.getId(), product);
 	}
 
 	@Override
-	public void read(int id) {
-		// TODO Auto-generated method stub
-
+	public Product read(int id) {
+		return products.get(id);
 	}
 
 	@Override
